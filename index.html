@@ -31,7 +31,7 @@
   <label class="price">Price: $900</label>
   <br>
   <a class="buy-btn" href="mailto:cyrex921@gmail.com">Contact to Buy</a>
-  <a class="paypal-btn" href="https://www.paypal.com/paypalme/absolombulus5">Pay with PayPal</a>
+  <a class="paypal-btn" href="javascript:buyTicket('Mexico vs South Africa', '900')">Pay with PayPal</a>
 </div>
 
 <!-- Match 2 -->
@@ -41,7 +41,7 @@
   <label class="price">Price: $300</label>
   <br>
   <a class="buy-btn" href="mailto:cyrex921@gmail.com">Contact to Buy</a>
-  <a class="paypal-btn" href="https://www.paypal.com/paypalme/absolombulus5">Pay with PayPal</a>
+  <a class="paypal-btn" href="javascript:buyTicket('South Korea vs UEFA Playoff', '300')">Pay with PayPal</a>
 </div>
 
 <!-- Match 3 -->
@@ -51,7 +51,7 @@
   <label class="price">Price: $1000</label>
   <br>
   <a class="buy-btn" href="mailto:cyrex921@gmail.com">Contact to Buy</a>
-  <a class="paypal-btn" href="https://www.paypal.com/paypalme/absolombulus5">Pay with PayPal</a>
+  <a class="paypal-btn" href="javascript:buyTicket('Canada vs UEFA Playoff A', '1000')">Pay with PayPal</a>
 </div>
 
 <!-- Match 4 -->
@@ -61,7 +61,7 @@
   <label class="price">Price: $2500</label>
   <br>
   <a class="buy-btn" href="mailto:cyrex921@gmail.com">Contact to Buy</a>
-  <a class="paypal-btn" href="https://www.paypal.com/paypalme/absolombulus5">Pay with PayPal</a>
+  <a class="paypal-btn" href="javascript:buyTicket('USA vs Paraguay', '2500')">Pay with PayPal</a>
 </div>
 
 <!-- Match 5 -->
@@ -71,7 +71,7 @@
   <label class="price">Price: $1500</label>
   <br>
   <a class="buy-btn" href="mailto:cyrex921@gmail.com">Contact to Buy</a>
-  <a class="paypal-btn" href="https://www.paypal.com/paypalme/absolombulus5">Pay with PayPal</a>
+  <a class="paypal-btn" href="javascript:buyTicket('Qatar vs Switzerland', '1500')">Pay with PayPal</a>
 </div>
 
 <!-- Match 6 -->
@@ -81,12 +81,30 @@
   <label class="price">Price: $1200</label>
   <br>
   <a class="buy-btn" href="mailto:cyrex921@gmail.com">Contact to Buy</a>
-  <a class="paypal-btn" href="https://www.paypal.com/paypalme/absolombulus5">Pay with PayPal</a>
+  <a class="paypal-btn" href="javascript:buyTicket('Brazil vs Morocco', '1200')">Pay with PayPal</a>
 </div>
 
 <!-- Add more matches below in the same style -->
 <!-- You can continue with the other group stage games from June 14–27 and the knockout dates -->
 <!-- Source: official match schedule from FIFA and reliable published fixtures :contentReference[oaicite:2]{index=2} -->
+
+<script>
+// Check if user is logged in
+if (!localStorage.getItem('userEmail')) {
+  window.location.href = 'login.html';
+}
+
+function buyTicket(matchName, price) {
+  const userName = localStorage.getItem('userName');
+  const userEmail = localStorage.getItem('userEmail');
+  
+  // Send email notification (this would need a backend service)
+  alert(`Thank you ${userName}! Payment confirmation will be sent to ${userEmail}`);
+  
+  // Redirect to PayPal
+  window.open('https://www.paypal.com/paypalme/absolombulus5/' + price, '_blank');
+}
+</script>
 
 </body>
 </html>
